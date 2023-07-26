@@ -28,6 +28,8 @@ jobs:
   deploy-to-droplet:
     needs: build-and-push
     runs-on: ubuntu-latest
+    env:
+      IMAGE_NAME: ${{ env.IMAGE_NAME }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
