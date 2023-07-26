@@ -46,4 +46,4 @@ jobs:
             docker pull $IMAGE_NAME
             docker stop server || true
             docker rm server || true
-            docker run -d --name server --network host -p 5000:5000 $IMAGE_NAME
+            docker run -d --name server --network host -p 5000:5000 --env-file /root/.env $IMAGE_NAME
