@@ -7,7 +7,7 @@ function App() {
   const [n, setN] = useState(0);
 
   const fetchN = async () => {
-    const { data } = await axios.get("http://164.92.139.247/number");
+    const { data } = await axios.get("http://164.92.139.247:5000/number");
     setN(data.number);
   };
 
@@ -16,7 +16,7 @@ function App() {
   }, []);
 
   const handleClick = async () => {
-    await axios.post("http://164.92.139.247/increment");
+    await axios.post("http://164.92.139.247:5000/increment");
     fetchN();
   };
 
